@@ -29,9 +29,9 @@ $( document ).ready(function() {
 
       console.log(body.coord.lat);
       console.log(body.coord.lon);
-      var searchedPostion = {coords: {latitude: body.coord.lat,longitude: body.coord.lon}}
+      var searchedPosition = {coords: {latitude: body.coord.lat,longitude: body.coord.lon}}
 
-      geolocationSuccess(searchedPostion);
+      geolocationSuccess(searchedPosition);
       $('.showHumidity').text(`The humidity in ${city} is ${body.main.humidity}%`);
       $('.showTemp').text(`The temperature in Kelvins is ${body.main.temp} degrees.`);
     }, function(error) {
@@ -39,7 +39,6 @@ $( document ).ready(function() {
     });
   });
 });
-
 
 //google maps functions
 function locateUser() {
@@ -56,15 +55,10 @@ function locateUser() {
   }
 }
 
-
-
 // this is the success callback from telling the navigator (your browser) to get the current user's position
 // we do this on line 13 above. We pass in a function to call on success, a function to call on error, and some options to tell the geolocation api how we want it to run.
 // on successfully locating the user, geolocationSuccess() gets called automatically, and it is passed the user's position as an argument.
 // on error, geolocationError is called.
-function getWeatherGeolocation(position) {
-
-}
 
 function geolocationSuccess(position) {
 
